@@ -5,25 +5,11 @@ var Parse = {
   create: function(message, successCB, errorCB = null) {
     // todo: save a message to the server
 
-    /*
-    MESSAGE:
-
-        var message = {
-          username: 'Mel Brooks',
-          text: 'It\'s good to be the king',
-          roomname: 'lobby'
-        };
-
-    */
-
-
-
-    // MISSING THE MESSAGE
     $.ajax({
       url: Parse.server,
-      type: 'POST', // POST method instead
+      type: 'POST',
       data: JSON.stringify(message),
-      contentType: 'application/json',//???
+      contentType: 'application/json',
       success: successCB,
       error: errorCB || function(error) {
         console.error('chatterbox: Failed to post the message', error);
