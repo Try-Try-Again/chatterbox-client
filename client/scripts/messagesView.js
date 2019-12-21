@@ -9,6 +9,6 @@ var MessagesView = {
   },
 
   renderMessage: function(message) {
-    $('#chats').append(MessageView.render(message));
+    MessagesView.$chats.append(MessageView.render(message));
   }
 };
