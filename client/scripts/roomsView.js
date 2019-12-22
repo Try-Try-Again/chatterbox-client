@@ -1,6 +1,6 @@
 var RoomsView = {
 
-  //$button: $('#rooms button'),
+  $button: $('#rooms button'),
   $select: $('#rooms select'),
 
   initialize: function() {
@@ -13,13 +13,14 @@ var RoomsView = {
     //Hey JQuery! make selecter render a room based on what room is selected
     // On click:
     //   add property to Rooms with key = room name, value = []
-    //RoomViews.$button.click()
+    RoomsView.$button.click(Rooms.add());/*Rooms.add(   */
 
-    RoomsView.$select.change(function() {console.log($(this).val());});/*RoomsView.changeFunction*/
+    RoomsView.$select.change(function() { console.log($(this).val()); });/*RoomsView.changeFunction*/
 
   },
 
   render: function() {
+    //
 
   },
 
@@ -27,11 +28,12 @@ var RoomsView = {
   renderRoom: function(roomName) {
     //RoomViews... select ... render()
     // expect($('#rooms select')
-    RoomsView.$select.append(`<option value="${roomName}">${roomName}</option>`);//EXAMPLE FIX LATER
+    RoomsView.$select.append(`<option value="${roomName}">${roomName}</option>`); //EXAMPLE FIX LATER
   },
 
   changeFunction: function(event) {
     //if change
     console.log(this);
   }
+
 };
